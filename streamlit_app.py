@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Read the dataset
-df = pd.read_csv(r"C:\Users\divya\OneDrive\Desktop\ML web app\Clean_BDHS_Diabetic_Data_Jahan.csv")
+df = pd.read_csv("Clean_BDHS_Diabetic_Data_Jahan.csv")
 
 # Label Encoding
 le = LabelEncoder()
