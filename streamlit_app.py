@@ -2,7 +2,7 @@
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
-from imblearn.over_sampling import RandomOverSampler
+
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 import streamlit as st
@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Read the dataset
-df = pd.read_csv("Clean_BDHS_Diabetic_Data_Jahan.csv")
+df = pd.read_csv(r"C:/Users/divya/OneDrive/Desktop/ML web app/Clean_BDHS_Diabetic_Data_Jahan_Balanced.csv")
 
 # Label Encoding
 le = LabelEncoder()
@@ -21,14 +21,10 @@ df['diabetes'] = le.fit_transform(df['diabetes'])
 X = df[['weight', 'height', 'SBP', 'DBP', 'age']]
 y = df['diabetes']
 
-# Applying RandomOverSampler to the dataset before splitting
-ros = RandomOverSampler(sampling_strategy="not majority")
-X_res, y_res = ros.fit_resample(X, y)
+# Splitting the dataset into training and test sets
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
-# Splitting the oversampled dataset into training and test sets
-x_train, x_test, y_train, y_test = train_test_split(X_res, y_res, test_size=0.2, random_state=0)
-
-# Train the model on the balanced and split data
+# Train the model on the split data
 rf = RandomForestClassifier()
 rf.fit(x_train, y_train)
 
