@@ -1,11 +1,11 @@
-pandas==1.3.3
-scikit-learn==1.0.2
+pandas==2.2.1
+scikit-learn==1.4.1.post.1
 imbalanced-learn==0.8.0
-streamlit==1.1.0
+streamlit==1.31.1
 numpy==1.26.4
-matplotlib==3.4.3
-seaborn==0.11.2
-plotly==5.3.1
-Pillow==8.4.0
+matplotlib==3.8.3
+seaborn==0.13.2
+plotly==5.20.0
+Pillow==10.2.0
 
 
