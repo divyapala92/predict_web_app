@@ -29,7 +29,7 @@ rf = RandomForestClassifier()
 rf.fit(x_train, y_train)
 
 # Use trained model to make predicionst on the test set
-#y_pred = rf.predict(x_test)
+y_pred = rf.predict(x_test)
 
 # Calculate the confusion matrix and performance metrics
 cm = confusion_matrix(y_test, y_pred)
