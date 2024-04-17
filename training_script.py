@@ -48,9 +48,5 @@ print("F1 Score:", f1)
 
 # Return the performance metrics directly
 performance_metrics = {
-    "accuracy": accuracy,
-    "precision": precision,
-    "recall": recall,
-    "f1": f1
-}
+    "accuracy": accuracy, "precision": precision, "recall": recall, "f1": f1}
 performance_metrics
