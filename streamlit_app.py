@@ -21,14 +21,14 @@ df['diabetes'] = le.fit_transform(df['diabetes'])
 X = df[['weight', 'height', 'SBP', 'DBP', 'age']]
 y = df['diabetes']
 
-# Splitting the dataset into training and test sets
+# Splitting the dataset into training and test sets using train_test_split function from scikit learn
 x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
-# Train the model on the split data
+#Initialise and train a random forest classifier using training data
 rf = RandomForestClassifier()
 rf.fit(x_train, y_train)
 
-# Predict on the test set
+# Use trained model to make predicionst on the test set
 y_pred = rf.predict(x_test)
 
 # Calculate the confusion matrix and performance metrics
